@@ -1,22 +1,22 @@
-# script4.sh
+#!/usr/bin/env bash
 
 if [ "$#" -ne 2 ]; then
-    echo "Error: se esperan exactamente 2 parámetros."
-    echo "Uso: ./script4.sh <origen> <destino>"
-    exit 1
+  echo "Este script solo acepta dos parámetros: origen y destino." >&2
+  exit 1
 fi
  
-ORIGEN="$1"
-DESTINO="$2"
+ficheroDeOrigen="$1"
+ficheroDeDestino="$2"
  
 # --- El archivo origen debe existir ---
-if [ ! -f "$ORIGEN" ]; then
-    echo "Error: el archivo de origen '$ORIGEN' no existe o no es un fichero regular."
+if [ ! -f "$ficheroDeOrigen" ]; then
+    echo "El fichero origen no existe"
     exit 1
 fi
  
-# --- Copia del archivo ---
-cp "$ORIGEN" "$DESTINO"
-echo "Archivo '$ORIGEN' copiado correctamente a '$DESTINO'."
+
+cp -- "$ficheroDeOrigen" "$ficheroDeDestino"
+echo "Archivo '$ficheroDeOrigen' copiado correctamente a '$ficheroDeDestino'."
 exit 0
+
  
