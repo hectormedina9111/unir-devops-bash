@@ -13,16 +13,3 @@ for archivo in *.jpg; do
         echo "Archivo modificados $FECHA-$archivo"
     fi
 done
-
-cat << EOF
-
-===========================================================
-      RESUMEN DEL COMANDO EJECUTADO
-===========================================================
-Este script automatiza el renombrado de archivos.
-1. Obtiene la fecha actual ($FECHA).
-2. Busca todos los archivos con extensión .jpg.
-3. Aplica un comando 'mv' (move/rename) para añadir 
-   el sufijo de fecha al nombre original.
-===========================================================
-EOF
